@@ -45,6 +45,53 @@
 
 
 ​	
+## Week_3
 
+### 1. 실행 방법
+
+- 원하는 디렉토리 위치에 Repository clone
+
+  ```bash
+  // HTTPS
+  git clone https://github.com/Sehbeom/2021DB.git
+  
+  // SSH
+  git clone git@github.com:Sehbeom/2021DB.git
+  ```
+
+- week_3 디렉토리로 이동
+
+  ```bash
+  cd week_3
+  ```
+
+- express 설치 및 view 설정(hbs)
+
+  ```bash
+  npm install -g express-generator
+  express --view=hbs .
+  ```
+
+- npm package 설치 후 실행
+
+  ```bash
+  npm install
+  npm run start
+  ```
+
+- localhost 접속
+
+  <blockquote>localhost:3000</blockquote>
+
+
+
+### 2. 실행 결과
+
+![image](https://user-images.githubusercontent.com/51029359/141642221-99d545a2-b9ba-4f73-8b2a-f531c2b5c19f.png)
+
+![image](https://user-images.githubusercontent.com/51029359/141642225-353baf2f-152b-4124-b9d0-f9c03da3702e.png)
+
+
+- Database 내 Student Table의 Data 출력.
 
 
