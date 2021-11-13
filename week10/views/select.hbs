@@ -1,0 +1,28 @@
+<h1>{{ title1 }}</h1>
+<table>
+    <tr>
+        <td>Dname</td>
+        <td>Dnumber</td>
+    </tr>
+    {{#each department}}
+    <tr>
+        <td>{{Dname}}</td>
+        <td>{{Dnumber}}</td>
+    </tr>
+    {{/each}}
+</table>
+<br>
+<br>
+<h1>{{ title2 }}</h1>
+<table>
+    <tr>
+        <td>Subject_name</td>
+        <td>Subject_id</td>
+    </tr>
+    {{#each subject}}
+    <tr>
+        <td>{{subject_name}}</td>
+        <td>{{subject_id}}</td>
+    </tr>
+    {{/each}}
+</table>

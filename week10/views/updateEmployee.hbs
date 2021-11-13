@@ -1,0 +1,35 @@
+<h1>{{title}}</h1>
+
+<table>
+    <tr>
+        <td>Fname</td>
+        <td>Minit</td>
+        <td>Lname</td>
+        <td>Ssn</td>
+        <td>Bdate</td>
+        <td>Address</td>
+        <td>Sex</td>
+        <td>Salary</td>
+        <td>Super_ssn</td>
+        <td>Dno</td>
+    </tr>
+    {{#each emp_res}}
+    {{!-- employee table의 Data 수정 form. --}}
+    {{!-- submit 하면 '/update/employee' 경로로 post 메소드 요청. --}}
+    <form method="post" action='/update/employee'>
+        <tr>
+            <td><input type="text" name="fname" value={{Fname}}></td>
+            <td><input type="text" name="minit" value={{Minit}}></td>
+            <td><input type="text" name="lname" value={{Lname}}></td>
+            <td><input type="text" name="ssn" value={{Ssn}}></td>
+            <td><input type="text" name="bdate" value={{Bdate}}></td>
+            <td><input type="text" name="address" value={{Address}}></td>
+            <td><input type="text" name="sex" value={{Sex}}></td>
+            <td><input type="text" name="salary" value={{Salary}}></td>
+            <td><input type="text" name="super_ssn" value={{Super_ssn}}></td>
+            <td><input type="text" name="dno" value={{Dno}}></td>
+            <td><input type="submit" value="수정"></td>
+        </tr>
+    </form>
+    {{/each}}
+</table>

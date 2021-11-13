@@ -1,0 +1,23 @@
+<h1>{{title}}</h1>
+
+<table>
+    <tr>
+        <td>Dname</td>
+        <td>Dnumber</td>
+        <td>Mgr_ssn</td>
+        <td>Mgr_start_date</td>
+    </tr>
+    {{#each dept_res}}
+    {{!-- department table의 Data 수정 form. --}}
+    {{!-- formaction : submit 하면 '/update/department' 경로로 post 메소드 요청. --}}
+    <form method="post">
+        <tr>
+            <td><input type="text" name="dname" placeholder={{Dname}}></td>
+            <td><input type="text" name="dnumber" placeholder={{Dnumber}}></td>
+            <td><input type="text" name="mgr_ssn" placeholder={{Mgr_ssn}}></td>
+            <td><input type="text" name="mgr_start_date" placeholder={{Mgr_start_date}}></td>
+            <td><input type="submit" value="수정" formaction="/update/department"></td>
+        </tr>
+    </form>
+    {{/each}}
+</table>

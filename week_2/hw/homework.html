@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>12161780_장세범</title>
+    <meta charset="UTF-8" />
+</head>
+
+
+<!--컴퓨터가 0~n 까지의 랜덤숫자를 뽑을 것임. n 값을 게이지(bar) 를 통해 설정할 수 있음-->
+<!--bar를 설정해두고, input 칸에 숫자 입력해서 컴퓨터가 뽑은 숫자와 내가 입력한 숫자 중에 비교해서-->
+<!--컴퓨터가 뽑은 숫자가 더 크면 you lose!, 내가 적은 숫자가 더 크면 you win! 이 표시되도록 설정-->
+<body>
+    <h1>Random Number Game</h1>
+    <div>
+        <h3 class="js-title">Generate a number between 0 and <span id="maxnum">10</span></h3>
+        <datalist id="number">
+            <option value="50"></option>
+            <option value="100"></option>
+            <option value="150"></option>
+            <option value="200"></option>
+        </datalist>
+        <input list="number" id="js-range" type="range" min="5" max="200" value="5" step="5" />
+    </div>
+    <form id="js-guess">
+        <label>Guess the number:</label>
+        <input id="numinput" type="number" max="200" min="5" />
+        <button>Play!</button>
+    </form>
+    <div id="js-result">
+        <span id="choosednum"></span> <br>
+        <span id="printresult" style="font-weight: bold;"></span>
+    </div>
+    <script type="text/javascript" src="hw_week2.js"></script> <!--js 파일 연결 코드-->
+</body>
+
+</html>
