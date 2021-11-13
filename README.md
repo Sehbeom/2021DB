@@ -83,6 +83,20 @@
 
   <blockquote>localhost:3000</blockquote>
 
+- Student Table 생성 쿼리문
+
+  ```mysql
+  create table student(
+      -> studentID int(8) NOT NULL,
+      -> name char(5) not null,
+      -> grade tinyint(1) not null,
+      -> major varchar(20) not null,
+      -> admissionDate date not null,
+      -> email varchar(30) not null,
+      -> primary key(studentID));
+  ```
+
+  
 
 
 ### 2. 실행 결과
