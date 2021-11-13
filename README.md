@@ -215,3 +215,95 @@
 
 ![image](https://user-images.githubusercontent.com/51029359/141642883-a5559c30-25d0-4786-b844-05fa7959d2b5.png)
 
+
+## Week10
+
+### 1. 실행 방법
+
+- 원하는 디렉토리 위치에 Repository clone
+
+  ```bash
+  // HTTPS
+  git clone https://github.com/Sehbeom/2021DB.git
+  
+  // SSH
+  git clone git@github.com:Sehbeom/2021DB.git
+  ```
+
+- week10 디렉토리로 이동
+
+  ```bash
+  cd week10
+  ```
+
+- npm package 설치 후 실행
+
+  ```bash
+  npm install
+  npm run start
+  ```
+
+- localhost 접속
+
+  <blockquote>localhost:3000</blockquote>
+
+- MySQL 쿼리문
+
+  - Department Table
+
+    ```mysql
+    create table department(
+    	Dname varchar(15) not null unique,
+        Dnumber int not null,
+        primary key(Dnumber)
+    );
+    ```
+
+  - Subject Table
+
+    ```mysql
+    create table subject(
+    	subject_name varchar(30) not null,
+        subject_id int not null,
+        primary key(subject_id)
+    );
+    ```
+
+  - User Table
+
+    ```mysql
+    create table user(
+    	Id varchar(20) not null,
+        Password varchar(20) not null,
+        Role varchar(5) not null,
+        primary key(Id)
+    );
+    ```
+
+
+
+### 2. 사용 방법
+
+#### (1) path : '/'
+
+- User Table의 Id, Password Data를 토대로 로그인
+- Id 가 'admin' 일 경우, 삭제 가능 페이지로 연결 : '/delete'
+- Id 가 'admin'이 아닐 경우, Data 출력 페이지로 연결 '/select'
+
+![image](https://user-images.githubusercontent.com/51029359/141643467-00da658f-ffc4-4702-806c-bd699702eec9.png)
+
+
+#### (2) path : '/delete'
+
+- admin 계정으로 로그인 시 접속 가능
+- Data 삭제 가능
+
+![image](https://user-images.githubusercontent.com/51029359/141643473-d67e3ebc-26a8-4ab2-942d-062a512ef86b.png)
+
+#### (3) path : '/select'
+
+- admin 계정이 아닌 계정으로 로그인 시 접속
+- 단순 Data 출력 페이지
+
+![image](https://user-images.githubusercontent.com/51029359/141643478-04763936-66d3-406a-a774-cc6b7b8a9ee9.png)
+
