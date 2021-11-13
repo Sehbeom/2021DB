@@ -109,3 +109,109 @@
 - Database 내 Student Table의 Data 출력.
 
 
+## Week8
+
+### 1. 실행 방법
+
+- 원하는 디렉토리 위치에 Repository clone
+
+  ```bash
+  // HTTPS
+  git clone https://github.com/Sehbeom/2021DB.git
+  
+  // SSH
+  git clone git@github.com:Sehbeom/2021DB.git
+  ```
+
+- week8 디렉토리로 이동
+
+  ```bash
+  cd week8
+  ```
+
+- npm package 설치 후 실행
+
+  ```bash
+  npm install
+  npm run start
+  ```
+
+- localhost 접속
+
+  <blockquote>localhost:3000</blockquote>
+
+- MySQL 쿼리문
+
+  - Employee Table
+
+    ```mysql
+    create table employee(
+    	Fname varchar(10) not null,
+        Minit char(1) null,
+        Lname varchar(20) not null,
+        Ssn char(9) not null,
+        Bdate date null,
+        Address varchar(30) null,
+        Sex char(1) null,
+        Salary decimal(5,0) null,
+        Super_ssn char(9) null,
+        Dno int not null,
+        primary key(Ssn)
+    );
+    ```
+
+  - Department Table
+
+    ```mysql
+    create table department(
+    	Dname varchar(15) not null unique,
+        Dnumber int not null,
+        Mgr_ssn char(9) not null,
+        Mgr_start_date date null,
+        primary key(Dnumber)
+    );
+    ```
+
+  - Contraints
+
+    - FK : Employee(Dno) -> Department(Dnumber)
+
+      ```mysql
+      alter table employee add constraint Dno_Dnum foreign key(Dno) references department(Dnumber);
+      ```
+
+    - FK : Department(Mgr_ssn) -> Employee(Ssn)
+
+      ```mysql
+      alter table department add constraint Mgrssn_Ssn foreign key(Mgr_ssn) references employee(Ssn);
+      ```
+
+
+
+### 2. 사용 방법
+
+#### (1) path : '/'
+
+- Employee, Department Data 삽입
+
+![image](https://user-images.githubusercontent.com/51029359/141642836-717408f3-bfa2-4ffe-a99a-71b7824e5602.png)
+
+
+#### (2) path : '/select'
+
+- Employee, Department Data 출력
+![image](https://user-images.githubusercontent.com/51029359/141642850-67e9444e-1e68-4bef-8dfb-bb5c26bb8343.png)
+![image](https://user-images.githubusercontent.com/51029359/141642855-d0225c4b-dec3-4627-8d10-69e386adc646.png)
+
+
+#### (3) path : '/update'
+
+- '/update/employee' : Employee Data 수정
+
+![image](https://user-images.githubusercontent.com/51029359/141642875-e64c54db-4548-432b-a8ee-ba26fc7750e2.png)
+
+
+- 'update/department' : Department Data 수정
+
+![image](https://user-images.githubusercontent.com/51029359/141642883-a5559c30-25d0-4786-b844-05fa7959d2b5.png)
+
